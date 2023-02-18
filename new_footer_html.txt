@@ -1,0 +1,55 @@
+ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Email Signature</TITLE>
+<META content="text/html; charset=utf-8" http-equiv="Content-Type">
+</HEAD>
+<BODY style="font-size: 10pt; font-family:Arial, sans-serif;">
+
+<table style="width:525px; font-size:10pt; font-family:Arial, sans-serif;"  cellspacing="0" cellpadding="0" border="0">
+<tbody>
+ <tr>
+  <td style="font-size:10pt; width:180px; padding-right:10px; vertical-align:middle;" valign="middle"><p style="margin-bottom:25px; line-height:1.2"><strong><span style="font-size:12pt; font-family:Arial, sans-serif; color:#0058aa">Ali Asger Saify</span></strong><br><span style="font-family:Arial, sans-serif; font-size:9pt; color:#000000;">Managing Director</span>
+   </p>
+
+   <a href="https://www.smartcareind.in/" target="_blank" rel="noopener"> <img alt="logo" style="width:143px; height:auto; border:0;" src="https://ecp.yusercontent.com/mail?url=https%3A%2F%2Fdrive.google.com%2Fuc%3Fexport%3Dview%26id%3D1TNHm0Q72jRAzzNE0JTCTKF2YbQfdRyg0&amp;t=1675139884&amp;ymreqid=7d6edbeb-9526-3a83-1c5d-720007014c00&amp;sig=NYmHEWWsgjr_f8uH.CkRWA--~D" width="143" border="0"> </a>
+
+  </td>
+
+  <td style="font-family:Arial, sans-serif; padding-left:15px; vertical-align:top; line-height:1.2; border-left:solid 2px #cccccc" valign="top">
+
+    <span style="font-size:9pt; font-family:Arial, sans-serif;color:#000000;">(+91) 9826183072</span>
+   <span style="font-size:9pt; font-family:Arial, sans-serif;color:#000000;"><br>0731-2704481</span>
+   <span style="font-size:9pt; font-family:Arial, sans-serif;color:#000000;"><br>aliasgar@saifygroup.com, aliasger341@yahoo.com</span>
+   <span><br><strong><a href="http://www.smartcareind.in" target="_blank" rel="noopener" style="text-decoration:none;"><span style="font-size:9pt; font-family:Arial, sans-serif; color:#009fae;">www.smartcareind.in</span></a></strong></span>
+
+   <p style="margin-top:20px; margin-bottom:20px">
+   <span><a href="https://www.facebook.com/saifyhealthkart/" target="_blank" rel="noopener"><img alt="facebook icon" style="border:0; height:15px; width:15px; " src="https://www.mail-signatures.com/signature-generator/img/templates/simple-and-light/fb.png" width="15" border="0"></a>&nbsp;&nbsp;&nbsp;&nbsp;</span><span><a href="https://www.linkedin.com/company/saify-group---india?original_referer=" target="_blank" rel="noopener"><img alt="linkedin icon" style="border:0; height:15px; width:15px; " src="https://www.mail-signatures.com/signature-generator/img/templates/simple-and-light/ln.png" width="15" border="0"></a>&nbsp;&nbsp;&nbsp;&nbsp;</span><span><a href="https://www.youtube.com/channel/UC5LcySjOltitsykyGhzPqBw/featured" target="_blank" rel="noopener"><img alt="youtube icon" style="border:0; height:15px; width:15px; " src="https://www.mail-signatures.com/signature-generator/img/templates/simple-and-light/yt.png" width="15" border="0"></a>&nbsp;&nbsp;&nbsp;&nbsp;</span><span><a href="https://www.instagram.com/smart.careindia/" target="_blank" rel="noopener"><img alt="instagram icon" style="border:0; height:15px; width:15px; " src="https://www.mail-signatures.com/signature-generator/img/templates/simple-and-light/it.png" width="15" border="0"></a>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+   </p>
+
+   <a href="https://www.smartcareind.in/" target="_blank" rel="noopener" style="text-decoration:none;"><img alt="banner" style="width:257px; height:auto; border:0;"  src="https://ecp.yusercontent.com/mail?url=https%3A%2F%2Fdrive.google.com%2Fuc%3Fexport%3Dview%26id%3D1of37KP4cekT3hJnyCByOj9nB_iBv4zid&amp;t=1675139884&amp;ymreqid=7d6edbeb-9526-3a83-1c5d-720007014c00&amp;sig=gN5.T19sDA65YlesJW.lLA--~D" width="257" border="0"></a>
+
+
+   <p style="margin-top:5px; margin-bottom:0"><strong style="font-family:Arial, sans-serif; font-size:8pt; color:#000000;">Saify Traders, Saify Healthcare and Medi-Devices (India) Pvt. Ltd. (collectively known as Saifygroup)</strong><span style="font-size:8pt; font-family:Arial, sans-serif;color:#000000;">14/1, "AKBAR VILLA", Opposite Dawa Bazaar, R.N.T. MARG, INDORE,</span><span style="font-size:8pt; font-family:Arial, sans-serif;color:#000000;">452001 (M.P.) INDIA</span>
+   </p>
+
+  </td>
+ </tr>
+
+</tbody>
+</table>
+
+</BODY>
+</HTML>
+
+
+
+Ali Asger Saify
+Managing Director
+logo 	(+91) 9826183072
+0731-2704481
+aliasgar@saifygroup.com, aliasger341@yahoo.com
+www.smartcareind.in
+
+facebook icon    linkedin icon    youtube icon    instagram icon
+banner
+
+Saify Traders, Saify Healthcare and Medi-Devices (India) Pvt. Ltd. (collectively known as Saifygroup) 14/1, "AKBAR VILLA", Opposite Dawa Bazaar, R.N.T. MARG, INDORE, 452001 (M.P.) INDIA
