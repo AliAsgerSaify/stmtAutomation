@@ -303,7 +303,7 @@ def bankselectAppMain():
 
 
     # TO CHANGE THE ICON OF ROOT USE:
-    root.iconbitmap('./assets/icon/login.ico')
+    root.iconbitmap(resource_path('./assets/icon/login.ico'))
 
     try:
         root.deiconify()
