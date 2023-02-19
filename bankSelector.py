@@ -55,6 +55,15 @@ voices = engine.getProperty('voices')  # getting details of current voice
 # engine.setProperty('voice', voices[0].id)  #changing index, changes voices. o for male
 engine.setProperty('voice', voices[1].id)  # changing index, changes voices. 1 for female
 
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
 def bankselectAppMain():
     # formation of tkinter box
     root = Tk()
@@ -162,8 +171,8 @@ def bankselectAppMain():
             # print('IDBI HC ERROR: ' + str(e))
             # idbihcMain()
             pass
-        # root.deiconify()
-        root.destroy()
+        root.deiconify()
+        # root.destroy()
 
     def idbiasian():
         msg = messagebox.askyesno("Download Settings", "Do you want to open and set download settings ?")
@@ -184,8 +193,8 @@ def bankselectAppMain():
             # print("IDBI ASIAN ERROR: " + str(e))
             # idbiAsian.asianMain()
             pass
-        # root.deiconify()
-        root.destroy()
+        root.deiconify()
+        # root.destroy()
 
     def icici():
         root.iconify()
@@ -202,7 +211,7 @@ def bankselectAppMain():
             pass
             # iciciStmt.main()
         root.deiconify()
-        root.destroy()
+        # root.destroy()
 
     def compile():
         root.withdraw()
@@ -220,7 +229,7 @@ def bankselectAppMain():
         newtabscript("preferences")
         driver.get("about:preferences")
         root.deiconify()
-        root.destroy()
+        # root.destroy()
 
     def stmtemail():
         root.iconify()
@@ -265,30 +274,31 @@ def bankselectAppMain():
     button_frame_row2 = Frame(root,background=bg_col)
     button_frame_row2.pack(pady=10,padx=10)
 
+
     #Buttons in Row 1
-    btnidbisaify = ttk.Button(button_frame_row1, text="IDBI SAIFY", padding=20, command=idbisaify)
+    btnidbisaify = ttk.Button(button_frame_row1, text="IDBI SAIFY", padding=20, command=lambda:idbisaify(), cursor="hand2")
     btnidbisaify.grid(row=0, column=0, padx=20)
 
-    btnidbihc = ttk.Button(button_frame_row1, text="IDBI HC", padding=20, command=idbihc)
+    btnidbihc = ttk.Button(button_frame_row1, text="IDBI HC", padding=20, command=lambda:idbihc(), cursor="hand2")
     btnidbihc.grid(row=0, column=2, padx=20)
 
-    btnidbiasn = ttk.Button(button_frame_row1, text="IDBI ASIAN", padding=20, command=idbiasian)
+    btnidbiasn = ttk.Button(button_frame_row1, text="IDBI ASIAN", padding=20, command=lambda:idbiasian(), cursor="hand2")
     btnidbiasn.grid(row=0, column=3, padx=20)
 
-    btnicici = ttk.Button(button_frame_row1, text="ICICI", padding=20, command=icici)
+    btnicici = ttk.Button(button_frame_row1, text="ICICI", padding=20, command=lambda:icici(), cursor="hand2")
     btnicici.grid(row=0, column=4, padx=20)
 
     #Buttons in Row 2
-    btncompile = ttk.Button(button_frame_row2, text="STMT COMPILE", padding=20, command=compile)
+    btncompile = ttk.Button(button_frame_row2, text="STMT COMPILE", padding=20, command=lambda:compile(), cursor="hand2")
     btncompile.grid(row=1, column=1, padx=20)
 
-    btnsbi = ttk.Button(button_frame_row2, text="SBI", padding=20, command=sbi)
+    btnsbi = ttk.Button(button_frame_row2, text="SBI", padding=20, command=lambda:sbi(), cursor="hand2")
     btnsbi.grid(row=1, column=2, padx=20)
 
-    btnemail = ttk.Button(button_frame_row2, text="EMAIL STMT", padding=20, command=stmtemail)
+    btnemail = ttk.Button(button_frame_row2, text="EMAIL STMT", padding=20, command=lambda:stmtemail(), cursor="hand2")
     btnemail.grid(row=1, column=3, padx=20)
 
-    btnexit = ttk.Button(button_frame_row2, text="EXIT", padding=20, command=exit)
+    btnexit = ttk.Button(button_frame_row2, text="EXIT", padding=20, command=lambda:exit(), cursor="hand2")
     btnexit.grid(row=1, column=4, padx=20)
 
 
