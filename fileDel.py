@@ -32,8 +32,8 @@ def DeleteFiles():
     # center alignment of the box
     x_Left = int(root.winfo_screenwidth() / 2 - Tk_Width / 2)
     y_Top = int(root.winfo_screenheight() / 2 - Tk_Height / 2)
-    # root.geometry("{}x{}+{}+{}".format(Tk_Width, Tk_Height, x_Left, y_Top))
-    root.eval('tk::PlaceWindow . center')
+    root.geometry("{}x{}+{}+{}".format(Tk_Width, Tk_Height, x_Left, y_Top))
+    # root.eval('tk::PlaceWindow . center')
     bg_col= "#fecd45"
     root.resizable(False,False)
     # more bg colors : #a0aecd
