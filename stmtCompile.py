@@ -63,18 +63,28 @@ def compileStmt():
     idbisaify.idbisaifyMain()
 
     try:
+        currentMonth = datetime.datetime.now().month
         time_now = int(time_now)
         time.sleep(0.6)
-        if (date_now == "31" and time_now <= in_morning_till):
-            newtabscript('tabAsian30')
-            idbiAsian.asianMain()
+        if currentMonth == '2':
+            if (date_now == "28" and time_now <= in_morning_till):
+                newtabscript('tabAsian28')
+                idbiAsian.asianMain()
 
-        elif (date_now == "27" and time_now <= in_morning_till):
-            newtabscript('tabAsian30')
-            idbiAsian.asianMain()
-
+            elif (date_now == "27" and time_now <= in_morning_till):
+                newtabscript('tabAsian27')
+                idbiAsian.asianMain()
         else:
-            pass
+            if (date_now == "31" and time_now <= in_morning_till):
+                newtabscript('tabAsian31')
+                idbiAsian.asianMain()
+
+            elif (date_now == "30" and time_now <= in_morning_till):
+                newtabscript('tabAsian30')
+                idbiAsian.asianMain()
+
+            else:
+                pass
     except Exception as e:
         print("RAISED EXCEPTION : "+e)
 
