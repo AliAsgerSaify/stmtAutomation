@@ -12,6 +12,8 @@ import datetime
 import time
 from send2trash import send2trash
 from tkinter.filedialog import askopenfilename
+
+
 def resource_path(relative_path):
     """ Get absolute path to resource, works for dev and for PyInstaller """
     try:
@@ -38,15 +40,19 @@ def DeleteFiles():
     fg = "#000"
     root.config(bg=bg_col)
     root.withdraw()
+    root.iconbitmap(resource_path('./assets/icon/bin.ico'))
+
     def end():
         root.destroy()
 
-    path = ''
-    ask_path = tkinter.filedialog.askdirectory()
-    if ask_path == None or ask_path == '':
-        path = r'C:\Users\Acer\Desktop\BANK STATEMENT\CURRENT'
-    else:
-        path = ask_path
+    try:
+        ask_path = tkinter.filedialog.askdirectory()
+        if ask_path == None or ask_path == '':
+            path = r'C:\Users\Acer\Desktop\BANK STATEMENT\CURRENT'
+        else:
+            path = ask_path
+    except Exception as e:
+        print(str(e))
     # path = askopenfilename()
     path = path.replace('/',"\\")
     print(path)
@@ -100,7 +106,7 @@ def DeleteFiles():
     button_main.focus()
     button_main.grid(row=0, column=0, padx=30)
 
-    root.iconbitmap(resource_path('./assets/icon/bin.ico'))
+
     root.deiconify()
     root.mainloop()
 
