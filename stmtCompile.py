@@ -31,7 +31,7 @@ def compileStmt():
     time_now = datetime.datetime.now()
     time_now = time_now.strftime('%H')
     # print('datenow : ' + date_now + '\ntimenow : '+ time_now)
-
+    currentMonth = datetime.datetime.now().month
     in_morning_till = 11
 
     stmtpath = "C:\\Users\\Acer\\Desktop\\BANK STATEMENT\\CURRENT"
@@ -63,7 +63,7 @@ def compileStmt():
     idbisaify.idbisaifyMain()
 
     try:
-        currentMonth = datetime.datetime.now().month
+
         time_now = int(time_now)
         time.sleep(0.6)
         if currentMonth == '2':
