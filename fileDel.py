@@ -5,10 +5,13 @@
 import os
 import glob
 import tkinter as tk
+import tkinter.filedialog
 from tkinter import *
 from tkinter import ttk
 import datetime
 import time
+
+import Importall
 from send2trash import send2trash
 from tkinter.filedialog import askopenfilename
 
@@ -21,7 +24,8 @@ def DeleteFiles():
     # center alignment of the box
     x_Left = int(root.winfo_screenwidth() / 2 - Tk_Width / 2)
     y_Top = int(root.winfo_screenheight() / 2 - Tk_Height / 2)
-    root.geometry("{}x{}+{}+{}".format(Tk_Width, Tk_Height, x_Left, y_Top))
+    # root.geometry("{}x{}+{}+{}".format(Tk_Width, Tk_Height, x_Left, y_Top))
+    root.eval('tk::PlaceWindow . center')
     bg_col= "#fecd45"
     root.resizable(False,False)
     # more bg colors : #a0aecd
@@ -31,9 +35,12 @@ def DeleteFiles():
     def end():
         root.destroy()
 
-
-
-    path = r'C:\Users\Acer\Desktop\BANK STATEMENT\CURRENT'
+    path = ''
+    ask_path = tkinter.filedialog.askdirectory()
+    if ask_path == None or ask_path == '':
+        path = r'C:\Users\Acer\Desktop\BANK STATEMENT\CURRENT'
+    else:
+        path = ask_path
     # path = askopenfilename()
     path = path.replace('/',"\\")
     print(path)
@@ -87,6 +94,7 @@ def DeleteFiles():
     button_main.focus()
     button_main.grid(row=0, column=0, padx=30)
 
+    root.iconbitmap(Importall.resource_path('./assets/icon/bin.ico'))
     root.deiconify()
     root.mainloop()
 
