@@ -266,6 +266,8 @@ def bankselectAppMain():
         if driver.current_url == "" or driver.current_url == "https://duckduckgo.com/" or driver.title == 'DuckDuckGo — Privacy, simplified.' or \
                 driver.current_url == "about:blank" or driver.current_url == None:
             driver.quit()
+        elif driver.current_url == 'https://duckduckgo.com/':
+            driver.quit()
         # engine.stop()
 
     button_frame_row1 = Frame(root,background=bg_col)
