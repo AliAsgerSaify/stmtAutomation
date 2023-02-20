@@ -10,8 +10,6 @@ from tkinter import *
 from tkinter import ttk
 import datetime
 import time
-
-import Importall
 from send2trash import send2trash
 from tkinter.filedialog import askopenfilename
 def resource_path(relative_path):
@@ -102,7 +100,7 @@ def DeleteFiles():
     button_main.focus()
     button_main.grid(row=0, column=0, padx=30)
 
-    root.iconbitmap(resource_path('/assets/icon/bin.ico'))
+    root.iconbitmap(resource_path('./assets/icon/bin.ico'))
     root.deiconify()
     root.mainloop()
 
