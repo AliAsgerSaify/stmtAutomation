@@ -69,7 +69,7 @@ def compileStmt():
             newtabscript('tabAsian30')
             idbiAsian.asianMain()
 
-        elif (date_now == "30" and time_now <= in_morning_till):
+        elif (date_now == "27" and time_now <= in_morning_till):
             newtabscript('tabAsian30')
             idbiAsian.asianMain()
 
