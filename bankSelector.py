@@ -228,6 +228,8 @@ def bankselectAppMain():
             pass
         newtabscript("preferences")
         driver.get("about:preferences")
+        driver.find_element('xpath','/html/html:body/stack/hbox/vbox[2]/vbox/vbox/groupbox[10]/richlistbox/richlistitem[7]').click()
+        driver.find_element('xpath','/html/html:body/stack/hbox/vbox[2]/vbox/vbox/groupbox[10]/richlistbox/richlistitem[7]/hbox[2]/label').click()
         root.deiconify()
         # root.destroy()
 
