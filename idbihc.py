@@ -90,6 +90,9 @@ def idbihcMain():
             engine.say("I.D.B.I. HEALTH-CARE LOGIN SUCCESSFULL")
             engine.runAndWait()
             print("Login Successful")
+            side_panel = '//a[@id="menu-button"]'
+            driver.find_element('xpath', side_panel).click()
+            time.sleep(1)
             # try:
             #     driver.get('https://corp.idbibank.co.in/corp/Finacle;jsessionid='
             #            '0000y38-TCVhg0cDRc1KuwD0VWL:1dclnsgeo?bwayparam=SEgPj1ZgsXpO0scYJ7eYV8wxbbS'

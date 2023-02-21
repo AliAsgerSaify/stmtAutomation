@@ -13,6 +13,7 @@ import time
 from send2trash import send2trash
 from tkinter.filedialog import askopenfilename
 from tkinter.messagebox import askyesno
+from tkinter.messagebox import askyesnocancel
 
 fg = "#000"
 bg_col= "#fecd45"
@@ -71,15 +72,27 @@ def DeleteFiles():
 
     try:
         path = ''
-        cnfm_box = askyesno('Confirm', 'To continue with default location press Yes otherwise press no')
-        if cnfm_box == True:
+        # cnfm_box = askyesno('Confirm', 'To continue with default location press Yes otherwise press no')
+        cnfm_box = askyesnocancel('Confirm', 'To continue with default location press Yes otherwise press no')
+
+        if cnfm_box == 1:
             path = r'C:\Users\Acer\Desktop\BANK STATEMENT\CURRENT'
-        else:
+            print(cnfm_box.__index__())
+
+        elif cnfm_box == 0:
+            print(cnfm_box.__index__())
             ask_path = tkinter.filedialog.askdirectory()
             path = fr'{ask_path}'
 
-    except FileNotFoundError as e:
-        print('Specified File Location not found')
+        else:
+            # print(cnfm_box.__index__())
+            pass
+
+    except Exception as e:
+        if path == '' or None:
+            print('Specified File Location not found')
+        else:
+            print('Error: ' + str(e))
     # path = askopenfilename()
     path = path.replace('/',"\\")
     print(path)

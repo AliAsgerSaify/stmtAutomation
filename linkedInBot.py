@@ -38,7 +38,7 @@ def linkedinMain():
 
     driver.get('https://www.linkedin.com/search/results/people/?network=%5B%22F%22%5D&origin=FACETED_SEARCH&sid=71z')
     time.sleep(2)
-    msg_btn = driver.find_element('xpath','//button[@id="ember67"]')
+    msg_btn = driver.find_element('xpath','//button[contains(@id,"ember")]')
     msg_btn.click()
 
 if __name__ == "__main__":
