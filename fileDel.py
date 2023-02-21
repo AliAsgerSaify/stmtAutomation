@@ -13,17 +13,9 @@ import time
 from send2trash import send2trash
 from tkinter.filedialog import askopenfilename
 
-
-def resource_path(relative_path):
-    """ Get absolute path to resource, works for dev and for PyInstaller """
-    try:
-        # PyInstaller creates a temp folder and stores path in _MEIPASS
-        base_path = sys._MEIPASS
-    except Exception:
-        base_path = os.path.abspath(".")
-
-    return os.path.join(base_path, relative_path)
-def DeleteFiles():
+fg = "#000"
+bg_col= "#fecd45"
+def initTk():
     root = Tk()
     root.title("Success !!!")
     # width and heigth of box
@@ -34,14 +26,45 @@ def DeleteFiles():
     y_Top = int(root.winfo_screenheight() / 2 - Tk_Height / 2)
     root.geometry("{}x{}+{}+{}".format(Tk_Width, Tk_Height, x_Left, y_Top))
     # root.eval('tk::PlaceWindow . center')
-    bg_col= "#fecd45"
+    # fg = "#000"
+    # bg_col = "#fecd45"
+    global fg, bg_col
     root.resizable(False,False)
     # more bg colors : #a0aecd
-    fg = "#000"
     root.config(bg=bg_col)
     root.withdraw()
     root.iconbitmap(resource_path('./assets/icon/bin.ico'))
+    return root
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
 
+    return os.path.join(base_path, relative_path)
+def DeleteFiles():
+    # root = Tk()
+    # root.title("Success !!!")
+    # # width and heigth of box
+    # Tk_Width= 350
+    # Tk_Height = 160
+    # # center alignment of the box
+    # x_Left = int(root.winfo_screenwidth() / 2 - Tk_Width / 2)
+    # y_Top = int(root.winfo_screenheight() / 2 - Tk_Height / 2)
+    # root.geometry("{}x{}+{}+{}".format(Tk_Width, Tk_Height, x_Left, y_Top))
+    # # root.eval('tk::PlaceWindow . center')
+    # bg_col= "#fecd45"
+    # root.resizable(False,False)
+    # # more bg colors : #a0aecd
+    # fg = "#000"
+    # root.config(bg=bg_col)
+    # root.withdraw()
+    # root.iconbitmap(resource_path('./assets/icon/bin.ico'))
+    root = initTk()
+    # fg = "#000"
+    # bg_col = "#fecd45"
     def end():
         root.destroy()
 
