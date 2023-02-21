@@ -26,10 +26,11 @@ def linkedinMain():
         pass
 
     driver.get('https://www.linkedin.com/')
-    time.sleep(1)
+    time.sleep(2)
     driver.find_element('xpath', '//input[@id="session_key"]').send_keys(myUserId)
     time.sleep(1)
     driver.find_element('xpath', '//input[@id="session_password"]').send_keys(myPassword)
+    time.sleep(2)
     driver.find_element('xpath', '//button[@type="submit"]').click()
 
     if ((CAPS) & 0xffff) == 0:
@@ -38,7 +39,7 @@ def linkedinMain():
 
     driver.get('https://www.linkedin.com/search/results/people/?network=%5B%22F%22%5D&origin=FACETED_SEARCH&sid=71z')
     time.sleep(2)
-    msg_btn = driver.find_element('xpath','//button[contains(@id,"ember")]')
+    msg_btn = driver.find_element('xpath','//button[starts-with(@id,"ember") and contains(text(),"Message")]')
     msg_btn.click()
 
 if __name__ == "__main__":
