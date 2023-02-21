@@ -9,9 +9,12 @@ from selenium.webdriver.common.keys import Keys
 import datetime
 import pyautogui
 
+engine = Importall.engine
+driver = Importall.driver
+def jsClick(btn):
+    driver.execute_script("arguments[0].click();", btn)
 def linkedinMain():
-    engine = Importall.engine
-    driver = Importall.driver
+
 
     with open('loginDetails.yml', 'r') as file:
         conf = yaml.safe_load(file)
@@ -31,7 +34,7 @@ def linkedinMain():
     time.sleep(1)
     driver.find_element('xpath', '//input[@id="session_password"]').send_keys(myPassword)
     time.sleep(2)
-    driver.find_element('xpath', '//button[@type="submit"]').click()
+    submit_btn = driver.find_element('xpath', '//button[@type="submit"]').click()
 
     if ((CAPS) & 0xffff) == 0:
         pyautogui.press('capslock')
@@ -39,8 +42,11 @@ def linkedinMain():
 
     driver.get('https://www.linkedin.com/search/results/people/?network=%5B%22F%22%5D&origin=FACETED_SEARCH&sid=71z')
     time.sleep(2)
-    msg_btn = driver.find_element('xpath','//button[starts-with(@id,"ember") and contains(text(),"Message")]')
-    msg_btn.click()
+    msg_btn = driver.find_element('xpath','//button[@id="ember"]').click()
+    # time.sleep(0.55)
+    driver.execute_script("alert('Success !!');")
+    # msg_btn.click()
+    # jsClick(msg_btn)
 
 if __name__ == "__main__":
     linkedinMain()
