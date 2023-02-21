@@ -90,6 +90,15 @@ def idbihcMain():
             engine.say("I.D.B.I. HEALTH-CARE LOGIN SUCCESSFULL")
             engine.runAndWait()
             print("Login Successful")
+            try:
+                driver.get('https://corp.idbibank.co.in/corp/Finacle;jsessionid='
+                       '0000y38-TCVhg0cDRc1KuwD0VWL:1dclnsgeo?bwayparam=SEgPj1ZgsXpO0scYJ7eYV8wxbbS'
+                       'tnlCKfJmTFEy%2FLpclBbR2h4L%2Fwy1DJ1l%2FEtLXw6AqW0HcaOIGJnCXfjFRvQEllGearVMI7q18bR'
+                       'yLXXlMVVuEomi0LZGxsP8tzj5D%0D%0AxAyPWf1YfuDhQDVb6Lha3tjpQRbncXgvvKxbMwdS1ekY6%2B5iwLNtCc'
+                       'AiR4r55e0GHiKdytInTVRFgqVNLIxfiRPOQdELGTh5VTBBSyCukTc%3D')
+
+            except Exception:
+                pass
         else:
             print('Login Failed due to some error')
     except:

@@ -4,6 +4,7 @@
 #  In case of any changes and/or discrepancies, please contact the administrator. Do not make any alteration without the permission of the administrator
 import time
 import keyboard
+# from pynput import keyboard
 import Importall
 import pyaudio, speech_recognition as sr
 import wave, sys
@@ -29,6 +30,17 @@ import bankSelector
 import stmtCompile
 import fileDel
 
+break_program = True
+def on_press(key):
+    global break_program
+    print(key)
+    if key == keyboard.press('f1') and break_program:
+        print('f1 pressed')
+        break_program = False
+
+    if key == keyboard.press('enter'):
+        print('Enter pressed')
+        break_program = True
 def lisMic():
     p = pyaudio.PyAudio()
     r = sr.Recognizer()
@@ -127,6 +139,13 @@ def runlisMic():
         if keyboard.is_pressed(59):
             print('Esc pressed')
             break
+    # print('press enter to initiate')
+    # while keyboard.is_pressed('f1'):
+    #     time.sleep(1)
+    #     lisMic()
+    #     # if keyboard.KEY_DOWN('f1'):
+    #     #     print('F1 pressed')
+    #     #     break
 
 if __name__ == "__main__":
     runlisMic()
