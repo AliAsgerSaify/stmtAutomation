@@ -41,12 +41,17 @@ def linkedinMain():
     time.sleep(1)
 
     driver.get('https://www.linkedin.com/search/results/people/?network=%5B%22F%22%5D&origin=FACETED_SEARCH&sid=71z')
-    time.sleep(2)
-    msg_btn = driver.find_element('xpath','//button[@id="ember"]').click()
-    # time.sleep(0.55)
+    time.sleep(2.5)
+    # msg_btn = driver.find_element('xpath','//button[@id="ember"]').click()
+    all_btns = driver.find_elements('tag name', 'button')
+    msg_buttons = [btn for btn in all_btns if btn.text == 'Message']
+    msg_buttons[0].click()
+    time.sleep(1)
+    paragraphs = driver.find_elements('tag name', 'p')
+    # paragraphs[-5].send_keys('aaaaa')
+    time.sleep(0.2)
+    print(paragraphs[-5].text)
     driver.execute_script("alert('Success !!');")
-    # msg_btn.click()
-    # jsClick(msg_btn)
 
 if __name__ == "__main__":
     linkedinMain()
