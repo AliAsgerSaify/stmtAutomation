@@ -55,7 +55,7 @@ def idbihcMain():
         driver.find_element('id', usernameId).send_keys(username)
         # root.mainloop()
         driver.find_element('id', captchaclickId).click()
-        time.sleep(12)
+        time.sleep(9)
         try:
             driver.find_element('id', loginButton).click()
         except:
