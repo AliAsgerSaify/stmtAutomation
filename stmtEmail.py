@@ -59,8 +59,10 @@ def CAPSLOCK_STATE():
 
 path = 'C:\\Users\\Acer\\Desktop\\BANK STATEMENT\\CURRENT\\'
 path = path.replace('/',"\\")
-yahoourl = ''
-mailto = ''
+
+yahoourl = 'https://mail.yahoo.com/d/compose/'
+mailto = 'juzer@saifygroup.com; online@saifygroup.com; ' \
+            'info@saifygroup.com; saifygroup.acc@gmail.com; murtaza@saifygroup.com; '
 
 def stmt():
     engine.say("-----Opening BANK STATEMENT FOLDER-----")
@@ -70,12 +72,12 @@ def stmt():
 
 pyautogui.press('capslock')
 
+
 def openmailandsend():
-    global yahoourl
-    global mailto
-    yahoourl = 'https://mail.yahoo.com/d/compose/'
-    mailto = 'juzer@saifygroup.com; online@saifygroup.com; ' \
-             'info@saifygroup.com; saifygroup.acc@gmail.com; murtaza@saifygroup.com; '
+
+    # yahoourl = 'https://mail.yahoo.com/d/compose/'
+    # mailto = 'juzer@saifygroup.com; online@saifygroup.com; ' \
+    #          'info@saifygroup.com; saifygroup.acc@gmail.com; murtaza@saifygroup.com; '
 
     engine.say("Opening : Yahoo E-MAIL")
     engine.runAndWait()
@@ -225,9 +227,24 @@ def mailMain():
                 to_addrs=reciever_add,
                 msg=finalmsg)
 
+def mailBot():
+    with open('loginDetails.yml', 'r') as file:
+        conf = yaml.safe_load(file)
+        myUserId = conf['yahoo']['userid']
+        myPassword = conf['yahoo']['password']
+
+    driver = Importall.driver
+    driver.maximize_window()
+    driver.get('https://login.yahoo.com/?.src=ym&pspid=159600001&activity=mail-direct&.lang=en-US&.intl=us&.done=https%3A%2F%2Fmail.yahoo.com%2Fd%2Fcompose%2F')
+    print(driver.current_url)
+    driver.find_element('id','login-username').send_keys(myUserId)
+    time.sleep(0.5)
+    driver.find_element('xpath','//input[@type="submit"]').click()
+    # pass
 
 # mailMain()
 if __name__ == "__main__":
     openmailandsend()
+    # mailBot()
 
 
