@@ -90,7 +90,7 @@ def idbisaifyMain():
         # driver.find_element('id',usernameClick).click()
         driver.find_element('id', usernameId).send_keys(username)
         driver.find_element('id', captchaclickId).click()
-        time.sleep(6)
+        time.sleep(12)
         try:
             driver.find_element('id', loginButton).click()
         except:

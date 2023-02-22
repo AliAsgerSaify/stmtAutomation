@@ -23,8 +23,8 @@ def idbihcMain():
 
     with open('loginDetails.yml', 'r') as file:
         conf = yaml.safe_load(file)
-        myUserId = conf['idbihc']['useridM']
-        myPassword = conf['idbihc']['passwordM']
+        myUserId = conf['idbihc']['userid']
+        myPassword = conf['idbihc']['password']
 
 
     engine.say("LOGGING IN I.D.B.I. CORPORATE BANK SITE")
@@ -55,7 +55,7 @@ def idbihcMain():
         driver.find_element('id', usernameId).send_keys(username)
         # root.mainloop()
         driver.find_element('id', captchaclickId).click()
-        time.sleep(6)
+        time.sleep(12)
         try:
             driver.find_element('id', loginButton).click()
         except:
