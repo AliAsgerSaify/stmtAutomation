@@ -4,6 +4,7 @@
 #  In case of any changes and/or discrepancies, please contact the administrator. Do not make any alteration without the permission of the administrator
 import os
 import glob
+import sys
 import tkinter as tk
 import tkinter.filedialog
 from tkinter import *
@@ -86,8 +87,8 @@ def DeleteFiles():
 
         else:
             # print(cnfm_box.__index__())
+            exit()
             pass
-
     except Exception as e:
         if path == '' or None:
             print('Specified File Location not found')
