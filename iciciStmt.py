@@ -61,6 +61,10 @@ def icici():
         driver.find_element('id', passwordId).send_keys(password)
         driver.find_element('id', submit_buttonId).click()
         # showStmt()
+        time.sleep(1)
+        all_btns = driver.find_elements('tag name', 'button')
+        today_btn = [btn for btn in all_btns if btn.text == 'Today']
+        today_btn[0].click()
         time.sleep(0.3)
 
 
