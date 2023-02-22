@@ -59,7 +59,8 @@ def CAPSLOCK_STATE():
 
 path = 'C:\\Users\\Acer\\Desktop\\BANK STATEMENT\\CURRENT\\'
 path = path.replace('/',"\\")
-
+yahoourl = ''
+mailto = ''
 
 def stmt():
     engine.say("-----Opening BANK STATEMENT FOLDER-----")
@@ -70,6 +71,8 @@ def stmt():
 pyautogui.press('capslock')
 
 def openmailandsend():
+    global yahoourl
+    global mailto
     yahoourl = 'https://mail.yahoo.com/d/compose/'
     mailto = 'juzer@saifygroup.com; online@saifygroup.com; ' \
              'info@saifygroup.com; saifygroup.acc@gmail.com; murtaza@saifygroup.com; '
