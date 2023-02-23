@@ -240,11 +240,17 @@ def mailBot():
     driver.find_element('id','login-username').send_keys(myUserId)
     time.sleep(0.5)
     driver.find_element('xpath','//input[@type="submit"]').click()
+    time.sleep(1)
+    driver.find_element('id', 'login-passwd').send_keys(myPassword)
+    time.sleep(1)
+    driver.find_element('id', 'login-signin').click()
+    time.sleep(1)
+
     # pass
 
 # mailMain()
 if __name__ == "__main__":
-    openmailandsend()
-    # mailBot()
+    # openmailandsend()
+    mailBot()
 
 
