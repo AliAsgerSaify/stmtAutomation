@@ -251,6 +251,9 @@ def mailBot():
         .send_keys('Bank Statement')
     # driver.find_element('xpath','/html/body/div[1]/div/div[1]/div/div[2]/div/div[2]/div[1]/div/div/div/div[2]/div[1]/div/div[2]/div/div[1]/div/div/div[1]')\
     #     .send_keys("Please Find Attachment!")
+    all_divs = driver.find_elements('tag name','div')
+    empty_div = [div for div in all_divs if div.text == ""]
+
 
     # pass
 
