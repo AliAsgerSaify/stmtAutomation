@@ -305,6 +305,8 @@ def bankselectAppMain():
     btnsbi = ttk.Button(button_frame_row2, text="SBI", padding=20, command=lambda:sbi(), cursor="hand2")
     btnsbi.grid(row=1, column=2, padx=20)
 
+    # TO ADD IMAGE IN BUTTON USE BELOW COMMENTED CODE
+    # image = tkinter.PhotoImage(file=resource_path('./assets/icon/login.png'))
     btnemail = ttk.Button(button_frame_row2, text="EMAIL STMT", padding=20, command=stmtemail, cursor="hand2")
     btnemail.grid(row=1, column=3, padx=20)
 
