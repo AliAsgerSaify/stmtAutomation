@@ -237,10 +237,16 @@ def bankselectAppMain():
         root.iconify()
         # time.sleep(4)
         try:
+            try:
+                newtabscript('yahoomail')
+            except Exception:
+                pass
+            # stmtEmail.mailBot()
             stmtEmail.openmailandsend()
 
-        except:
-            pass
+        except Exception as e:
+            print(str(e))
+            # pass
             # stmtEmail.openmailandsend()
 
 
@@ -299,7 +305,7 @@ def bankselectAppMain():
     btnsbi = ttk.Button(button_frame_row2, text="SBI", padding=20, command=lambda:sbi(), cursor="hand2")
     btnsbi.grid(row=1, column=2, padx=20)
 
-    btnemail = ttk.Button(button_frame_row2, text="EMAIL STMT", padding=20, command=lambda:stmtemail(), cursor="hand2")
+    btnemail = ttk.Button(button_frame_row2, text="EMAIL STMT", padding=20, command=stmtemail, cursor="hand2")
     btnemail.grid(row=1, column=3, padx=20)
 
     btnexit = ttk.Button(button_frame_row2, text="EXIT", padding=20, command=lambda:exit(), cursor="hand2")

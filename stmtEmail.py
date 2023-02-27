@@ -228,7 +228,7 @@ def mailMain():
                 msg=finalmsg)
 
 def mailBot():
-    with open('loginDetails.yml', 'r') as file:
+    with open(Importall.resource_path('loginDetails.yml'), 'r') as file:
         conf = yaml.safe_load(file)
         myUserId = conf['yahoo']['userid']
         myPassword = conf['yahoo']['password']
@@ -236,13 +236,28 @@ def mailBot():
     driver = Importall.driver
     driver.maximize_window()
     # driver.get('https://duckduckgo.com/')
-    driver.get('https://login.yahoo.com/?.src=ym&pspid=159600001&activity=mail-direct&.lang=en-US&.intl=us&.done=https%3A%2F%2Fmail.yahoo.com%2Fd%2Fcompose%2F')
-    print(driver.current_url)
+    driver.get('https://login.yahoo.com/')
+    # driver.get('https://mail.yahoo.com/d/compose/8443937449')
+    # print(driver.current_url)
+    time.sleep(1)
     driver.find_element('id','login-username').send_keys(myUserId)
     time.sleep(0.5)
     driver.find_element('xpath','//input[@type="submit"]').click()
-    time.sleep(1)
-    driver.find_element('id', 'login-passwd').send_keys(myPassword)
+    time.sleep(10)
+    try:
+        if driver.find_element('id', 'login-passwd').is_displayed():
+            driver.find_element('id', 'login-passwd').send_keys(myPassword)
+    except Exception as e:
+        print(str(e))
+    # if driver.current_url == 'https://login.yahoo.com/account/challenge/password?done=https%3A%2F%2Fwww.yahoo.com%2F&sessionIndex=Qg--' \
+    #                          '&acrumb=AH3vKuCs&display=login&authMechanism=primary':
+    #     if driver.find_element('id', 'login-passwd').is_displayed():
+    #         driver.find_element('id', 'login-passwd').send_keys(myPassword)
+    # else:
+    #     driver.get('https://login.yahoo.com/account/challenge/'
+    #                'password?done=https%3A%2F%2Fwww.yahoo.com%2F&sessionIndex=Qg--&acrumb=AH3vKuCs&display=login&authMechanism=primary')
+    #     if driver.find_element('id', 'login-passwd').is_displayed():
+    #         driver.find_element('id', 'login-passwd').send_keys(myPassword)
     time.sleep(1)
     driver.find_element('id', 'login-signin').click()
     time.sleep(1)
@@ -252,14 +267,35 @@ def mailBot():
     # driver.find_element('xpath','/html/body/div[1]/div/div[1]/div/div[2]/div/div[2]/div[1]/div/div/div/div[2]/div[1]/div/div[2]/div/div[1]/div/div/div[1]')\
     #     .send_keys("Please Find Attachment!")
     all_divs = driver.find_elements('tag name','div')
-    empty_div = [div for div in all_divs if div.text == ""]
+    time.sleep(1)
+    msg_div = [div for div in all_divs]
+    body_msg_div = msg_div[143]
+    msg_div[143].click()
+    time.sleep(0.3)
+    msg = 'please find attachments.'.title()
+    # try:
+    #     # body_msg_div.send_keys(msg)
+    #     driver.execute_script("arguments[0].value = arguments[1]", body_msg_div, msg)
+    # except Exception as e:
+    #     print('msg_div[143].sendkey() error: '+ str(e))
+    pyautogui.write(msg)
+    # counter = 0
+    # for div in all_divs:
+    #     print(counter)
+    #     print(div.text)
+    #     counter += 1
+    time.sleep(1)
+    stmt()
+    time.sleep(0.6)
+    messagebox.showinfo(title="SUCCESS !!!", message="DONE !!!!")
+
 
 
     # pass
 
 # mailMain()
 if __name__ == "__main__":
-    openmailandsend()
-    # mailBot()
+    # openmailandsend()
+    mailBot()
 
 

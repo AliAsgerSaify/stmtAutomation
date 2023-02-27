@@ -66,7 +66,8 @@ def compileStmt():
 
         time_now = int(time_now)
         time.sleep(0.6)
-        if currentMonth == '2':
+        print(currentMonth)
+        if currentMonth == 2:
             if (date_now == "28" and time_now <= in_morning_till):
                 newtabscript('tabAsian28')
                 idbiAsian.asianMain()
