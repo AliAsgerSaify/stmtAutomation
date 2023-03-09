@@ -23,8 +23,8 @@ def idbihcMain():
 
     with open('loginDetails.yml', 'r') as file:
         conf = yaml.safe_load(file)
-        myUserId = conf['idbihc']['userid']
-        myPassword = conf['idbihc']['password']
+        myUserId = conf['idbihc']['useridM']
+        myPassword = conf['idbihc']['passwordM']
 
 
     engine.say("LOGGING IN I.D.B.I. CORPORATE BANK SITE")

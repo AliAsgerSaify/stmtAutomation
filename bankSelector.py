@@ -242,7 +242,7 @@ def bankselectAppMain():
             except Exception:
                 pass
             # stmtEmail.mailBot()
-            stmtEmail.openmailandsend()
+            stmtEmail.mailBot()
 
         except Exception as e:
             print(str(e))

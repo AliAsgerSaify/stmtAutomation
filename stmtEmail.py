@@ -236,14 +236,14 @@ def mailBot():
     driver = Importall.driver
     driver.maximize_window()
     # driver.get('https://duckduckgo.com/')
-    driver.get('https://login.yahoo.com/')
-    # driver.get('https://mail.yahoo.com/d/compose/8443937449')
+    # driver.get('https://login.yahoo.com/')
+    driver.get('https://mail.yahoo.com/d/compose/8443937449')
     # print(driver.current_url)
     time.sleep(1)
     driver.find_element('id','login-username').send_keys(myUserId)
     time.sleep(0.5)
     driver.find_element('xpath','//input[@type="submit"]').click()
-    time.sleep(10)
+    time.sleep(2.5)
     try:
         if driver.find_element('id', 'login-passwd').is_displayed():
             driver.find_element('id', 'login-passwd').send_keys(myPassword)
