@@ -292,14 +292,14 @@ def bankselectAppMain():
     btnidbihc = ttk.Button(button_frame_row1, text="IDBI HC", padding=20, command=lambda:idbihc(), cursor="hand2")
     btnidbihc.grid(row=0, column=2, padx=20)
 
-    btnidbiasn = ttk.Button(button_frame_row1, text="IDBI ASIAN", padding=20, command=lambda:idbiasian(), cursor="hand2")
+    btnidbiasn = ttk.Button(button_frame_row1, text="IDBI ASIAN", padding=20, command=idbiasian, cursor="hand2")
     btnidbiasn.grid(row=0, column=3, padx=20)
 
-    btnicici = ttk.Button(button_frame_row1, text="ICICI", padding=20, command=lambda:icici(), cursor="hand2")
+    btnicici = ttk.Button(button_frame_row1, text="ICICI", padding=20, command=icici, cursor="hand2")
     btnicici.grid(row=0, column=4, padx=20)
 
     #Buttons in Row 2
-    btncompile = ttk.Button(button_frame_row2, text="STMT COMPILE", padding=20, command=lambda:compile(), cursor="hand2")
+    btncompile = ttk.Button(button_frame_row2, text="STMT COMPILE", padding=20, command=compile, cursor="hand2")
     btncompile.grid(row=1, column=1, padx=20)
 
     btnsbi = ttk.Button(button_frame_row2, text="SBI", padding=20, command=lambda:sbi(), cursor="hand2")
@@ -307,7 +307,7 @@ def bankselectAppMain():
 
     # TO ADD IMAGE IN BUTTON USE BELOW COMMENTED CODE
     # image = tkinter.PhotoImage(file=resource_path('./assets/icon/login.png'))
-    btnemail = ttk.Button(button_frame_row2, text="EMAIL STMT", padding=20, command=stmtemail, cursor="hand2")
+    btnemail = ttk.Button(button_frame_row2, text="EMAIL STMT", padding=20,command=lambda :stmtemail(), cursor="hand2")
     btnemail.grid(row=1, column=3, padx=20)
 
     btnexit = ttk.Button(button_frame_row2, text="EXIT", padding=20, command=lambda:exit(), cursor="hand2")

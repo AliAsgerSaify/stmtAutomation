@@ -237,7 +237,7 @@ def mailBot():
     driver.maximize_window()
     # driver.get('https://duckduckgo.com/')
     # driver.get('https://login.yahoo.com/')
-    driver.get('https://mail.yahoo.com/d/compose/8443937449')
+    driver.get('https://mail.yahoo.com/d/compose/')
     # print(driver.current_url)
     time.sleep(1)
     driver.find_element('id','login-username').send_keys(myUserId)
@@ -263,7 +263,7 @@ def mailBot():
     time.sleep(1)
     driver.find_element('id','message-to-field').send_keys(mailto)
     driver.find_element('xpath','//input[@class="q_T y_Z2hYGcu je_0 jb_0 X_0 N_fq7 G_e A_6EqO c1AVi73_6FsP C_Z281SGl ir_0 P_0 bj3_Z281SGl b_0 j_n d_72FG em_N"]')\
-        .send_keys('Bank Statement')
+        .send_keys('BANK STATEMENT')
     # driver.find_element('xpath','/html/body/div[1]/div/div[1]/div/div[2]/div/div[2]/div[1]/div/div/div/div[2]/div[1]/div/div[2]/div/div[1]/div/div/div[1]')\
     #     .send_keys("Please Find Attachment!")
     all_divs = driver.find_elements('tag name','div')
