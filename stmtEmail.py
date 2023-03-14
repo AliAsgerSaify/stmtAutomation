@@ -57,6 +57,8 @@ def CAPSLOCK_STATE():
     VK_CAPITAL = 0x14
     return hllDll.GetKeyState(VK_CAPITAL)
 
+CAPS = CAPSLOCK_STATE()
+
 path = 'C:\\Users\\Acer\\Desktop\\BANK STATEMENT\\CURRENT\\'
 path = path.replace('/',"\\")
 
@@ -228,6 +230,7 @@ def mailMain():
                 msg=finalmsg)
 
 def mailBot():
+    CAPS = CAPSLOCK_STATE()
     with open(Importall.resource_path('loginDetails.yml'), 'r') as file:
         conf = yaml.safe_load(file)
         myUserId = conf['yahoo']['userid']
@@ -263,22 +266,26 @@ def mailBot():
     time.sleep(1)
     driver.find_element('id','message-to-field').send_keys(mailto)
     driver.find_element('xpath','//input[@class="q_T y_Z2hYGcu je_0 jb_0 X_0 N_fq7 G_e A_6EqO c1AVi73_6FsP C_Z281SGl ir_0 P_0 bj3_Z281SGl b_0 j_n d_72FG em_N"]')\
-        .send_keys('BANK STATEMENT')
+        .send_keys('BANK STATEMENT ')
     # driver.find_element('xpath','/html/body/div[1]/div/div[1]/div/div[2]/div/div[2]/div[1]/div/div/div/div[2]/div[1]/div/div[2]/div/div[1]/div/div/div[1]')\
     #     .send_keys("Please Find Attachment!")
     all_divs = driver.find_elements('tag name','div')
     time.sleep(1)
+    if ((CAPS) & 0xffff) == 1:
+        pyautogui.press('capslock')
     msg_div = [div for div in all_divs]
     body_msg_div = msg_div[143]
-    msg_div[143].click()
-    time.sleep(0.3)
-    msg = 'please find attachments.'.title()
+    # msg_div[143].click()
+    time.sleep(0.5)
+    msg = 'Please Find Attachments. '#.title()
     # try:
     #     # body_msg_div.send_keys(msg)
     #     driver.execute_script("arguments[0].value = arguments[1]", body_msg_div, msg)
     # except Exception as e:
     #     print('msg_div[143].sendkey() error: '+ str(e))
+    all_divs[143].click()
     pyautogui.write(msg)
+
     # counter = 0
     # for div in all_divs:
     #     print(counter)

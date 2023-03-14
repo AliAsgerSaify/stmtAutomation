@@ -245,7 +245,7 @@ def bankselectAppMain():
             stmtEmail.mailBot()
 
         except Exception as e:
-            print(str(e))
+            print("Unable to run stmtEmail.mailBot() because: \t"+ str(e))
             # pass
             # stmtEmail.openmailandsend()
 
@@ -307,10 +307,10 @@ def bankselectAppMain():
 
     # TO ADD IMAGE IN BUTTON USE BELOW COMMENTED CODE
     # image = tkinter.PhotoImage(file=resource_path('./assets/icon/login.png'))
-    btnemail = ttk.Button(button_frame_row2, text="EMAIL STMT", padding=20,command=lambda :stmtemail(), cursor="hand2")
+    btnemail = ttk.Button(button_frame_row2, text="EMAIL STMT", padding=20,command= lambda : stmtemail(), cursor="hand2")
     btnemail.grid(row=1, column=3, padx=20)
 
-    btnexit = ttk.Button(button_frame_row2, text="EXIT", padding=20, command=lambda:exit(), cursor="hand2")
+    btnexit = ttk.Button(button_frame_row2, text="EXIT", padding=20, command=exit, cursor="hand2")
     btnexit.grid(row=1, column=4, padx=20)
 
 
